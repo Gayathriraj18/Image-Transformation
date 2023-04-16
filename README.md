@@ -22,7 +22,7 @@ Display the modified image output.
 End the program.
 
 ## Program:
-```
+```python
 Developed By: Gayathri A
 Register Number: 212221230028
 
