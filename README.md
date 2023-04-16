@@ -25,8 +25,7 @@ End the program.
 ```
 Developed By: Gayathri A
 Register Number: 212221230028
-```
-```
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -36,28 +35,26 @@ plt.axis('off')
 plt.imshow(img)
 plt.show()
 rows,cols,dim=img.shape
-```
+
 i)Image Translation
-```
+
 m=np.float32([[1,0,100],[0,1,200],[0,0,1]])
 t_img=cv2.warpPerspective(img,m,(cols,rows))
 plt.axis('off')
 plt.imshow(t_img)
 plt.show()
-```
+
 
 ii) Image Scaling
-```
+
 n=np.float32([[1.2,0,0],[0,1.2,0],[0,0,1]])
 s_img=cv2.warpPerspective(img,n,(cols*2,rows*2))
 plt.axis('off')
 plt.imshow(s_img)
-plt.show()
-```
 
 
 iii)Image shearing
-```
+
 o_x=np.float32([[1,0.5,0],[0,1,0],[0,0,1]])
 p_y=np.float32([[1,0,0],[0.5,1,0],[0,0,1]])
 sh_x=cv2.warpPerspective(img,o_x,(int(cols*1.5),int(rows*1.5)))
@@ -66,11 +63,11 @@ plt.axis('off')
 plt.imshow(sh_x)
 plt.imshow(sh_y)
 plt.show()
-```
+
 
 
 iv)Image Reflection
-```
+
 rows,cols,dim=img.shape
 q_x=np.float32([[1,0,0],[0,-1,rows],[0,0,1]])
 q_y=np.float32([[-1,0,cols],[0,1,0],[0,0,1]])
@@ -81,24 +78,19 @@ plt.imshow(r_img)
 plt.show()
 plt.imshow(r_img1)
 plt.show()
-```
-
-
 
 v)Image Rotation
-```
+
 angle=np.radians(40)
 r=np.float32([[np.cos(angle),-(np.sin(angle)),0],[np.sin(angle),np.cos(angle),0],[0,0,1]])
 ro=cv2.warpPerspective(img,r,(int(cols),int(rows)))
 plt.axis('off')
 plt.imshow(ro)
 plt.show()
-```
-
 
 
 vi)Image Cropping
-```
+
 c_img = img[120:600,120:600]
 plt.axis('off')
 plt.imshow(c_img)
